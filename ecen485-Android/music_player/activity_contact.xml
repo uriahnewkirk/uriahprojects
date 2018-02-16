@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trucks"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.uriahnewkirk.funky_beats.beats">
+
+
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="81dp"
+        android:text="You can contact me by email at uriahnewkirk@gmail.com or by phone at \n (919) 630-7092. Press the button below to be directed towards my github \n repository where I store my projects :) " />
+
+    <Button
+        android:id="@+id/github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp"
+        android:text="github" />
+</RelativeLayout>
