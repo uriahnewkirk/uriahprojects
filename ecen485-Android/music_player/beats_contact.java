@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class beats_contact extends AppCompatActivity {
     TextView info;
     Button go;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +44,7 @@ public class beats_contact extends AppCompatActivity {
 
     public void onClick(View view) {
         if(view.getId()==R.id.github) {
-            Intent o = new Intent();
-            o.setAction(Intent.ACTION_VIEW);
-            o.addCategory(Intent.CATEGORY_BROWSABLE);
-            o.setData(Uri.parse("https://github.com/uriahnewkirk/uriahprojects"));
+            Intent o = new Intent(getApplicationContext(), githubWeb.class);
             startActivity(o);
         }
     }
