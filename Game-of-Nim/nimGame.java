@@ -24,13 +24,13 @@ public class nimGame
       boolean playerturn=generate.nextBoolean();      //randomly choose who gets to go first
       int playerA=0;    //amount of marbles the computer chooses to take
       int playerB=0;    //amount of marbles the 2nd computer chooses to take
-      int marker=0;   
+      int marker=0;     //store which choice was selected when calculating probability of that choice being successful
       int player1=0;    //amount of marbles the user chooses to take
    
-      for(int j =0;j<urns.length;j++)     //array to run through the first dimension of the array
+      for(int j =0;j<urns.length;j++)     //for loop to run through the first dimension of the array
       {
       
-         for(int y=0;y<urns[j].length;y++)   //array to run through the second dimension of the array
+         for(int y=0;y<urns[j].length;y++)   //for loop to run through the second dimension of the array
          {
          
             urns[j][y]=500;         
@@ -205,8 +205,9 @@ public class nimGame
    }
 
    static int probPick(int[] odds) {
-      int sum = odds[0] + odds[1] + odds[2]; // sum of all probabilities
+      int sum = odds[0] + odds[1] + odds[2]; // sum of all probabilities (of choices 1, 2, & 3) of for that many marbles left
       int randnum = generate.nextInt( sum ); // random number 0 to sum-1
+      //as this program plays games, the odds shift to more favorable moves with that many particular marbles left
       if (odds[0] >= randnum) {
          return 1;
       }
