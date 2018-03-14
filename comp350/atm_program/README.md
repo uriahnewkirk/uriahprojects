@@ -14,14 +14,14 @@ Tabor Pumpkin account is 10,000. If negative balance occurs no problem.
 
 Example of input:
 
-B W 100 D 50 D 10 B
-W 50 B D 100
-B B B D 10 D 100 D 100 W 50
-W 50 D 10 D 10 D 10 D 5
-W 10 B B D 1000
-B W 500
-B
-W 100 W 100 W 100 B D 500 D 500 D 500
+B W 100 D 50 D 10 B<br/>
+W 50 B D 100<br/>
+B B B D 10 D 100 D 100 W 50<br/>
+W 50 D 10 D 10 D 10 D 5<br/>
+W 10 B B D 1000<br/>
+B W 500<br/>
+B<br/>
+W 100 W 100 W 100 B D 500 D 500 D 500<br/>
 
 Example output:
 
