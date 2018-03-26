@@ -29,12 +29,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class beats_contact extends AppCompatActivity {
 
+    private static final int EDIT_ID = Menu.FIRST+2;
     TextView info;
     Button go;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
@@ -53,6 +55,9 @@ public class beats_contact extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //inflate menu
+        menu.add(Menu.NONE, EDIT_ID, Menu.NONE, "Preferences")
+                .setIcon(R.drawable.ic_launcher_background)
+                .setAlphabeticShortcut('e');
         getMenuInflater().inflate(R.menu.menu_the, menu);
         return true;
     }
@@ -81,6 +86,9 @@ public class beats_contact extends AppCompatActivity {
                     item.setChecked(false);
                 }
                 return true;
+            case EDIT_ID:
+                startActivity(new Intent(this, EditPreferences.class));
+                return(true);
             default:
                 return super.onOptionsItemSelected(item);
         }
