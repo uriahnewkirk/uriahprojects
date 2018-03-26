@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genre">
+        <item>Alternative Rock</item>
+        <item>Blues</item>
+        <item>Classical</item>
+        <item>Country</item>
+        <item>Disco</item>
+        <item>EDM</item>
+        <item>Folk music</item>
+        <item>Funk</item>
+        <item>Grunge</item>
+        <item>Heavy Metal</item>
+        <item>Hip Hop</item>
+        <item>Indie Rock</item>
+        <item>Jazz</item>
+        <item>Opera</item>
+        <item>Pop</item>
+        <item>Punk Rock</item>
+        <item>Raggae</item>
+        <item>RnB</item>
+        <item>Rock</item>
+        <item>Soul</item>
+    </string-array>
+
+    <string-array name="genreV">
+        <item>Alternative Rock</item>
+        <item>Blues</item>
+        <item>Classical</item>
+        <item>Country</item>
+        <item>Disco</item>
+        <item>EDM</item>
+        <item>Folk music</item>
+        <item>Funk</item>
+        <item>Grunge</item>
+        <item>Heavy Metal</item>
+        <item>Hip Hop</item>
+        <item>Indie Rock</item>
+        <item>Jazz</item>
+        <item>Opera</item>
+        <item>Pop</item>
+        <item>Punk Rock</item>
+        <item>Raggae</item>
+        <item>RnB</item>
+        <item>Rock</item>
+        <item>Soul</item>
+    </string-array>
+</resources>

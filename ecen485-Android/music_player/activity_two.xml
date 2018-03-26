@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SeekBar
+        android:id="@+id/going"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/play_pause"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="410dp" />
+
+    <ImageButton
+        android:id="@+id/play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_media_pause"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/rewind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/play_pause"
+        android:layout_toLeftOf="@+id/play_pause"
+        android:layout_toStartOf="@+id/play_pause"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_media_rew"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/play_pause"
+        android:layout_alignBottom="@+id/play_pause"
+        android:layout_toEndOf="@+id/play_pause"
+        android:layout_toRightOf="@+id/play_pause"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_media_ff"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/artist_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_s"
+        android:layout_centerHorizontal="true"
+        android:text="Song Artist"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/title_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="Song Title" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/artist_s"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        app:srcCompat="@android:drawable/sym_call_missed" />
+
+
+</RelativeLayout>

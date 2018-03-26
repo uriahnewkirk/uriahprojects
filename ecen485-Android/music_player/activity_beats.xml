@@ -5,32 +5,39 @@
     android:id="@+id/trucks"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E8B57"
     tools:context="com.example.uriahnewkirk.funky_beats.beats">
 
 
     <TextView
-        android:id="@+id/path_v"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="path: " />
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:text="Hello user, how may I serve you today?"
+        android:textSize="12sp" />
 
     <ListView
         android:id="@+id/list_the"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/sBar1"
+        android:layout_above="@+id/nowP"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/holo_purple" />
+        android:choiceMode="singleChoice"
+        android:longClickable="true" />
 
     <SeekBar
         android:id="@+id/sBar1"
         android:layout_width="322dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/play_pause"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:maxHeight="20dp"
+        android:minHeight="20dp" />
 
     <ImageButton
         android:id="@+id/play_pause"
@@ -66,17 +73,36 @@
         android:id="@+id/tView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/list_the"
-        android:layout_toEndOf="@+id/sBar1"
+        android:layout_above="@+id/play_pause"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerVertical="false"
         android:layout_toRightOf="@+id/sBar1"
+        android:paddingBottom="8dp"
         android:textSize="10sp" />
 
     <TextView
         android:id="@+id/tView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/list_the"
+        android:layout_above="@+id/play_pause"
         android:layout_toStartOf="@+id/sBar1"
+        android:paddingBottom="8dp"
         android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/nowP"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_width="wrap_content"
+        android:scrollHorizontally="true"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sBar1"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

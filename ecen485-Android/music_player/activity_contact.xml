@@ -12,11 +12,14 @@
         android:id="@+id/information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="false"
+        android:layout_centerInParent="false"
+        android:layout_centerVertical="false"
         android:layout_marginTop="81dp"
-        android:text="You can contact me by email at uriahnewkirk@gmail.com or by phone at \n (919) 630-7092. Press the button below to be directed towards my github \n repository where I store my projects :) " />
+        android:text="email: uriahnewkirk@gmail.com \nphone: (919) 630-7092. \nPress the button below to be directed towards my github \n repository where I store this and other projects I've worked on :) " />
 
     <Button
         android:id="@+id/github"
