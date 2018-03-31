@@ -135,6 +135,8 @@ int main(int argc, char *argv[]) {
 	sem_destroy(&followQ);
 	sem_destroy(&leadQ);
 	sem_destroy(&rendezvous);
+	sem_destroy(&followerR);
+	sem_destroy(&leaderR);
 	pthread_attr_destroy(&attr);
 	pthread_mutex_destroy(&mewtex1);
 return 0;
