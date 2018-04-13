@@ -14,17 +14,16 @@ using namespace std;
 
 //Uriah Newkirk
 //COM350 Program #3 (Ballroom Dancers)
-//13 April 2018
+//20 April 2018
 
 //mutex
 //unlock = signal
 //lock = wait
 
 pthread_mutex_t mewtex1;
-int fCount, lCount;
-int f, l;
-int the_followers=0, the_leaders=0, totalF, totalL, difference;
-sem_t followQ, leadQ, followerR, leaderR, mutex, rendezvous;
+int fCount, lCount, f, l;
+int the_followers=0, the_leaders=0;
+sem_t followQ, leadQ, rendezvous;
 ofstream fout;
 
 void dance() {
@@ -36,77 +35,76 @@ void dance() {
 void *leaders(void *lid) {
 	
 	int *local_id, k=0;
+	//k is a local variable to help make sure everyone dances
 	local_id = (int *) lid;
 
 	while(k<fCount) {
 		pthread_mutex_lock(&mewtex1);
+		l=*local_id;
 		if(the_followers > 0) {
 			the_followers--;
 			sem_post(&followQ);		//increment semaphore by 1
+			//signal to the follower queue that a leader is now available
 		}
 		else {
 			the_leaders++;
 			pthread_mutex_unlock(&mewtex1);
 			sem_wait(&leadQ);		//decrement semaphore by 1
+			//wait in the queue until a follower is available
 		}	
-		l = *local_id;
+//		l = *local_id;
 		dance();
 		sem_wait(&rendezvous);
-		sem_post(&followerR);
-		sem_wait(&leaderR);
-
 		pthread_mutex_unlock(&mewtex1);
 		k++;
 	}
-	cout << "Leader Thread " << *local_id << " done" << endl;
+//	cout << "Leader Thread " << *local_id << " done" << endl;
 	pthread_exit(NULL);
 }
 
 void *followers(void *fid) {
 	
 	int *local_id, w=0;
+	//w is a local variable to help make sure that everyone dances
 	local_id = (int *) fid;
 	
 	while(w<lCount) {
 		pthread_mutex_lock(&mewtex1);
+		f=*local_id;
 		if(the_leaders > 0) {
 			the_leaders--;
-			sem_post(&leadQ);		//increment semaphore by 1			
+			sem_post(&leadQ);		//increment semaphore by 1	
+			//signal to the leader queue that a follower is available		
 		}
 		else {
 			the_followers++;
 			pthread_mutex_unlock(&mewtex1);
 			sem_wait(&followQ);		//decrement semaphore by 1
+			//wait in the queue until another leader is available
 		}
-		f = *local_id;
+//		f = *local_id;
 		dance();
 		sem_post(&rendezvous);
-		sem_post(&leaderR);
-		sem_wait(&followerR);
 		w++;
 	}
-	cout << "Follower Thread " << *local_id << " done" << endl;
+//	cout << "Follower Thread " << *local_id << " done" << endl;
 	pthread_exit(NULL);
 }
 
 
 int main(int argc, char *argv[]) {
-	if(argc!=4)
+	if(argc!=4) {
+		cout << "Invalid input, sorry :) " << endl;
 		return -1;
+	}
 	int n = atoi(argv[1]), m = atoi(argv[2]);
 	fCount=m;
 	lCount=n;
 	fout.open(argv[3]);
 	sem_init(&leadQ, 0, 0);
 	sem_init(&followQ, 0, 0);
-	sem_init(&mutex, 0, 1);
 	sem_init(&rendezvous, 0, 0);
-	sem_init(&followerR, 0, 0);
-	sem_init(&leaderR, 0, 0);
-	difference = abs(n-m);
 
-	
-	cout << "lCount: " << lCount << " and fCount: " << fCount << endl;
 	
 	int h;
 	int lids[n];
@@ -135,8 +133,6 @@ int main(int argc, char *argv[]) {
 	sem_destroy(&followQ);
 	sem_destroy(&leadQ);
 	sem_destroy(&rendezvous);
-	sem_destroy(&followerR);
-	sem_destroy(&leaderR);
 	pthread_attr_destroy(&attr);
 	pthread_mutex_destroy(&mewtex1);
 return 0;
