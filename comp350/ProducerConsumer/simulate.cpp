@@ -1,4 +1,5 @@
-
+//WORK IN PROGRESS PROGRAM
+//NOT YET COMPLETE
 #include <cstdlib>
 #include <time.h>
 #include <pthread.h>
