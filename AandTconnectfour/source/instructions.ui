@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>instructions</class>
+ <widget class="QDialog" name="instructions">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>The A&#038;T Four</string>
+  </property>
+  <widget class="QPushButton" name="mainM">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>400</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main Menu</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="rules">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-20</y>
+     <width>661</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>
+
+
+
+
+
+
+- The objective of the game, much like normal Connect Four,  is to get four tokens in a row. 
+
+- Each player will have between 2 and 10 seconds to place their token on the board (based on your timer selection before you start).
+
+- If a selection is not made before the timer expires, that player is eliminated and it is now the next player's turn.</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="title_the">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>10</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+     <italic>true</italic>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>Instructions</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>rules</zorder>
+  <zorder>mainM</zorder>
+  <zorder>title_the</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
